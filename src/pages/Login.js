@@ -29,7 +29,8 @@ export default function Login(props) {
       await loginService(email, password)
       sessionStorage.setItem("login", true)
       props.verificarLogin()
-      navigate("/menu")
+      attQtdAcessos()
+      navigate("/home")
 
     } catch (error) {
       alert(error)
@@ -53,16 +54,31 @@ export default function Login(props) {
   const limpar = () => {
     setEmail("")
     setPassword("")
+    setLembrarme(false)
   }
 
+  const attQtdAcessos = () => {
+    let qtd = localStorage.getItem("qtdAcessos")
+
+    localStorage.setItem("qtdAcessos", qtd ? parseInt(qtd)+1 : 1)
+      
+  }
 
   return (
     <Grid container style={{ padding: 10 }}>
       <Grid item xs={12}>
-        <div style={{ textAlign: "center" }}>
-          <h1>Sejam Bem-Vindos</h1>
-          <h2>ATITUS GAMERS</h2>
-        </div>
+        <Grid container style={{ marginBottom: 10 }}>
+          <Grid item md={4} xs={12} sm={12}></Grid>
+
+          <Grid item md={4} xs={12} sm={12}>
+            <div className="cabecalhoLogin">
+              <h1>Sejam Bem-Vindos</h1>
+              <h2>Insira seu login para acessar</h2>
+            </div>
+          </Grid>
+
+          <Grid item md={4} xs={12} sm={12}></Grid>
+        </Grid>
       </Grid>
       <Grid item md={4} xs={12} sm={12}></Grid>
       <Grid item md={4} xs={12} sm={12} style={{ backgroundColor: "white", padding: 10, borderRadius: 10 }}>

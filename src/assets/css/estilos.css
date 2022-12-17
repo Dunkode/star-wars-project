@@ -10,6 +10,18 @@
     padding: 10px;
     background-image: url("../images/back.jpg");
     background-size: cover;
+    background-position: center;
+    color: yellow;
+}
+.cabecalhoLogin {
+    min-height: 180px;
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    background-image: url("../images/login-cover.jpg");
+    background-size: cover;
+    color: yellow;
 }
 
 .corpo {
@@ -46,4 +58,20 @@
 .itemMenu:hover {
     cursor: pointer;
     background-color: gray;
+}
+
+.desenvImage {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+}
+.desenvCard {
+    background-color: #e1e1e1;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.acesso {
+    font-weight: bold;
+    text-align: right;
 }

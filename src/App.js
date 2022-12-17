@@ -4,9 +4,15 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Login from "./pages/Login";
-import Menu from "./pages/Menu";
+import Home from "./pages/Home";
+import Films from "./pages/Films";
 import './assets/css/estilos.css'
-import Cadastro from "./pages/Cadastro";
+import Starships from "./pages/Starships";
+import People from "./pages/People";
+import Planets from "./pages/Planets";
+import Species from "./pages/Species";
+import Duvidas from "./pages/Duvidas";
+import Sobre from "./pages/Sobre";
 
 function App() {
 
@@ -23,12 +29,36 @@ function App() {
       element: <Login verificarLogin={verificarLogin} />,
     },
     {
-      path: "/menu",
-      element: login ? <Menu /> : <Login verificarLogin={verificarLogin} />,
+      path: "/home",
+      element: login ? <Home /> : <Login verificarLogin={verificarLogin} />,
     },
     {
-      path: "/cadastro",
-      element: login ? <Cadastro /> : <Login verificarLogin={verificarLogin} />,
+      path: "/films",
+      element: login ? <Films /> : <Login verificarLogin={verificarLogin} />,
+    },
+    {
+      path: "/starships",
+      element: login ? <Starships /> : <Login verificarLogin={verificarLogin} />,
+    },
+    {
+      path: "/people",
+      element: login ? <People /> : <Login verificarLogin={verificarLogin} />,
+    },
+    {
+      path: "/planets",
+      element: login ? <Planets /> : <Login verificarLogin={verificarLogin} />,
+    },
+    {
+      path: "/species",
+      element: login ? <Species /> : <Login verificarLogin={verificarLogin} />,
+    },
+    {
+      path: "/duvidas",
+      element: login ? <Duvidas /> : <Login verificarLogin={verificarLogin} />,
+    },
+    {
+      path: "/sobre",
+      element: login ? <Sobre/> : <Login verificarLogin={verificarLogin} />,
     },
   ]);
 
